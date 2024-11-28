@@ -28,3 +28,17 @@ jobs:
 
     - name: Run Playwright tests
       run: npm run test
+
+    - name: Upload Allure report as artifact
+      if: success()
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure-report
+        path: allure-report/
+        
+    - name: Upload Playwright HTML report as artifact
+      if: success()
+      uses: actions/upload-artifact@v3
+      with:
+        name: playwright-html-report
+        path: playwright-report/

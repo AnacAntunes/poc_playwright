@@ -74,3 +74,7 @@ npm run test:allure:open
 ## Licença
 
 Este projeto é licenciado sob a licença **MIT**
+
+
+## Status
+[![Playwright CI](https://github.com/AnacAntunes/poc_playwright/actions/workflows/ci.yml/badge.svg)](https://github.com/AnacAntunes/poc_playwright/actions/workflows/ci.yml)

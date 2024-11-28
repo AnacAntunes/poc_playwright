@@ -4,12 +4,12 @@
   "description": "POC de automação de testes usando Playwright",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test",                       // Executa os testes com Playwright
-    "test:headed": "npx playwright test --headed",     // Executa os testes com navegador visível
-    "test:debug": "npx playwright test --debug",       // Inicia o modo de depuração
-    "test:report": "npx playwright show-report",       // Abre o relatório HTML
-    "test:allure:generate": "allure generate allure-results --clean -o allure-report", // Gera o relatório Allure
-    "test:allure:open": "allure open allure-report"    // Abre o relatório Allure
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:report": "npx playwright show-report",
+    "test:allure:generate": "allure generate allure-results --clean -o allure-report",
+    "test:allure:open": "allure open allure-report"
   },
   "keywords": ["playwright", "automation", "tests"],
   "author": "Ana Antunes",

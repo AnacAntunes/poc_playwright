@@ -1,14 +1,23 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
+  testDir: './tests',
+  fullyParallel: true,
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : undefined,
   reporter: [
-    ['list'], // Mostra os resultados no console em formato de lista
-    ['html', { outputFolder: 'playwright-report', open: 'never' }], // Relatório HTML
-    ['allure-playwright', { outputFolder: 'allure-results' }] // Relatório Allure
+    ['list'],
+    ['html', { outputFolder: 'playwright-report', open: 'never' }]
   ],
   use: {
-    // Configurações adicionais, como capturas de tela e vídeos
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
+    baseURL: 'https://playwright.dev',
+    trace: 'on-first-retry',
   },
+  projects: [
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
+    },
+  ],
 });

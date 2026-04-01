@@ -1,80 +1,40 @@
 # poc_playwright
 
-Este é um projeto de **POC (Proof of Concept)** para automação de testes utilizando o **Playwright**. O Playwright é uma ferramenta de automação de navegadores que facilita a execução de testes de ponta a ponta.
+POC de automação de testes E2E com **Playwright**.
 
-## Scripts Disponíveis
+## Pré-requisitos
 
-### Executar os Testes
+- Node.js 18+
+- npm 9+
 
-Para executar os testes automatizados com Playwright, utilize o comando:
-
-```bash
-npm run test
-```
-
-### Executar os Testes com Navegador Visível
-
-Para executar os testes com o navegador visível (útil para depuração), utilize o comando:
+## Instalação
 
 ```bash
-npm run test:headed
+npm install
+npx playwright install
 ```
 
-### Iniciar o Modo de Depuração
+## Scripts
 
-Para iniciar o modo de depuração e interagir com os testes, utilize:
+| Comando | Descrição |
+|---------|-----------|
+| `npm run test` | Executa os testes |
+| `npm run test:headed` | Executa com navegador visível |
+| `npm run test:report` | Abre o relatório HTML |
 
-```bash
-npm run test:debug
+## Estrutura
+
+```
+├── tests/                  # Testes
+├── .github/workflows/      # CI/CD
+├── playwright.config.ts   # Configuração
+└── package.json
 ```
 
-### Abrir o Relatório HTML do Playwright
+## CI/CD
 
-Para visualizar o relatório HTML gerado após os testes, use:
-
-```bash
-npm run test:report
-```
-
-### Gerar o Relatório Allure
-
-Para gerar o relatório Allure a partir dos resultados de teste, execute:
-
-```bash
-npm run test:allure:generate
-```
-
-### Abrir o Relatório Allure
-
-Após gerar o relatório Allure, você pode abri-lo com:
-
-```bash
-npm run test:allure:open
-```
-
-## Como Começar
-
-1. **Clone o repositório**:
-   ```bash
-   git clone https://github.com/AnacAntunes/poc_playwright.git
-   cd poc_playwright
-   ```
-
-2. **Instale as dependências**:
-   ```bash
-   npm install
-   ```
-
-3. **Execute os testes**:
-   Depois de instalar as dependências, você pode rodar os testes com:
-   ```bash
-   npm run test
-   ```
+Os testes são executados automaticamente no GitHub Actions a cada push e PR.
 
 ## Licença
 
-Este projeto é licenciado sob a licença **MIT**
-
-
-## Status
-[![Playwright CI](https://github.com/AnacAntunes/poc_playwright/actions/workflows/ci.yml/badge.svg)](https://github.com/AnacAntunes/poc_playwright/actions/workflows/ci.yml)
+MIT

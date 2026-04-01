@@ -30,11 +30,11 @@ jobs:
         run: npx playwright test
 
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: success()
         with:
           name: playwright-report-${{ github.run_id }}
           path: playwright-report/
-          retention-days: 7
+          retention-days: 30
 
       - name: Upload traces on failure
         if: failure()
